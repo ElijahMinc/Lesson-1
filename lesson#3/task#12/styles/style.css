@@ -1,0 +1,8 @@
+ol {
+   width: 200px;
+   list-style-type: decimal-leading-zero;
+   list-style-position: inside;
+}
+li {
+   margin-bottom: 10px;
+}

@@ -1,0 +1,13 @@
+html {
+   font-size: 16px;
+}
+p {
+   font-size: 2rem;
+}
+p span:first-child {
+   font-weight: bold;
+}
+
+p span:last-child {
+   font-style: italic;
+}

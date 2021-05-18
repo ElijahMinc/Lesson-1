@@ -1,0 +1,22 @@
+body {
+   opacity: .3;
+}
+.color-text p:nth-child(1) {
+   color: #0000ff;
+}
+.color-text p:nth-child(2) {
+   color: rgb(0, 0, 255);
+}
+.color-text p:nth-child(3) {
+   color: rgba(0, 0, 255, 0.541);
+}
+.color-text p:nth-child(4) {
+   color: hsl(240, 100%, 50%);
+}
+.color-text p:nth-child(5) {
+   color: rgba(0, 0, 255, 0.541);
+}
+
+a {
+   font-size: 30px;
+}

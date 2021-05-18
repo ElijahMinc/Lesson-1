@@ -1,0 +1,11 @@
+.task {
+   outline: 4px dashed red;
+}
+.task > p {
+   outline: double;
+   outline-offset: -5px;
+}
+.question {
+   width: 500px;
+   margin: 0 auto;
+}

@@ -1,0 +1,9 @@
+div {
+   width: 500px;
+   height: 200px;
+   margin: 0 auto;
+   background: url("../img/bg.jpg") center/ 40% no-repeat;
+   box-shadow: inset 30px -30px 20px 14px green, inset -30px 30px 20px 20px black, -50px -50px 20px 20px red,
+      50px 50px 20px 0px blue;
+}
+/* 0px 0px 0px red, 0px 0px 0px blue; */

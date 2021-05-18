@@ -1,0 +1,36 @@
+html {
+   font-size: 16px;
+}
+body {
+   background: url("../img/bg.jpg") center/ cover no-repeat;
+}
+.bold {
+   font-weight: bold;
+}
+.bolder {
+   font-weight: bolder;
+}
+.lighter {
+   font-weight: lighter;
+}
+.second {
+   line-height: 130%;
+}
+.third {
+   font-size: 1rem;
+}
+.fourth__item:nth-child(2) {
+   color: #ff0000;
+}
+.fourth__item:nth-child(3) {
+   color: blue;
+}
+.fourth__item:nth-child(4) {
+   color: rgb(126, 94, 94);
+}
+.fourth__item:nth-child(5) {
+   color: hsl(0, 100%, 50%);
+}
+.fourth__item:nth-child(6) {
+   color: rgba(155, 15, 15, 0.527);
+}

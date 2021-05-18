@@ -1,0 +1,6 @@
+div {
+   width: 300px;
+   height: 200px;
+   background-color: black;
+   background: url("../img/bg.jpg") center/ 25% no-repeat;
+}
