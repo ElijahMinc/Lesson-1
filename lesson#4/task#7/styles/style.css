@@ -2,7 +2,7 @@
    box-sizing: border-box;
 }
 div {
+   width: 25%;
    border: 1px solid black;
    float: left;
-   padding: 3px;
 }
