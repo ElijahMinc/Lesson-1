@@ -1,0 +1,23 @@
+div:not(.container) {
+   border: 1px solid black;
+   width: 100px;
+   margin: 0;
+   display: block;
+}
+.container {
+   width: 700px;
+   margin: 0 auto;
+}
+.item-first,
+.item-third,
+.item-fifth {
+   float: right;
+}
+.item-second,
+.item-fourth,
+.item-sixth {
+   float: left;
+}
+.item-first {
+   margin-right: 65%;
+}

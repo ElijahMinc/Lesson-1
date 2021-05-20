@@ -1,0 +1,24 @@
+.container {
+   width: 900px;
+   margin: 0 auto;
+}
+.wrapper {
+   background-color: red;
+   float: left;
+   width: 100%;
+}
+.left-block {
+   float: left;
+}
+.center-block {
+   float: right;
+}
+.right-block {
+   background-color: white;
+   float: left;
+}
+.left-block,
+.center-block,
+.right-block {
+   width: 33.333%;
+}

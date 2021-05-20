@@ -1,0 +1,27 @@
+/* < стили из html в задании, перенесенные в css>*/
+span,
+div div {
+   border: solid 2px black;
+   width: 50px;
+   height: 50px;
+}
+/* </>*/
+
+.list {
+   list-style-type: upper-alpha;
+}
+.top__inside-block span:nth-child(1) {
+   display: inline;
+   width: auto;
+   height: auto;
+}
+.top__inside-block span:nth-child(2) {
+   display: block;
+   width: 50px;
+}
+.center__inside-block div:nth-child(2) {
+   height: auto;
+}
+.bottom__inside-block span:nth-child(2) {
+   display: inline-block;
+}

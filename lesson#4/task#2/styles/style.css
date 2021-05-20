@@ -1,0 +1,27 @@
+.container {
+   width: 900px;
+   margin: 0 auto;
+}
+.first {
+   width: 10%;
+   float: right;
+}
+.second {
+   width: 90%;
+}
+.third {
+   float: left;
+   width: 10%;
+}
+.fourth {
+   float: right;
+   width: 90%;
+}
+.first,
+.third {
+   background-color: green;
+}
+.second,
+.fourth {
+   background-color: red;
+}
