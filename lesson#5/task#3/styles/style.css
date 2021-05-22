@@ -1,0 +1,33 @@
+header,
+aside,
+main,
+footer {
+   border: 1px solid black;
+}
+.container {
+   display: flex;
+   justify-content: space-between;
+}
+aside {
+   flex: 0 1 250px;
+}
+.main {
+   flex: 0 1 500px;
+}
+@media screen and (max-width: 991px) {
+   .container {
+      display: flex;
+      justify-content: space-between;
+   }
+   aside {
+      flex: 0 1 250px;
+   }
+   .main {
+      flex: 0 2 500px;
+   }
+}
+@media screen and (max-width: 520px) { 
+   .container {
+      display: block;
+   }
+}

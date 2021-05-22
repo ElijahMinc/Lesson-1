@@ -1,0 +1,21 @@
+div {
+   padding: 5px;
+   border: 2px solid black;
+   margin: 5px;
+}
+.flex-container {
+   display: flex;
+   margin: 0 auto;
+   width: 600px;
+}
+.flex-container__item:nth-child(1) {
+   flex: 0 0 100px;
+}
+.flex-container__item:nth-child(2),
+.flex-container__item:nth-child(4) {
+   flex: 1 1 100px;
+}
+.flex-container__item:nth-child(3) {
+   flex: 1 0 100px;
+}
+
