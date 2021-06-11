@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const options = {
    top: 10,
    right: 10,
@@ -20,3 +21,27 @@ function showNotification(options) {
 const hiddenElem = showNotification(options);
 setTimeout(() => { hiddenElem.remove() }, 1500)
 
+=======
+const options = {
+   top: 10,
+   right: 10,
+   html: "Hello!",
+   className: "welcome"
+}
+
+function showNotification(options) {
+   const body = document.body;
+   const notification = document.createElement('div');
+   notification.classList.add('notification');
+   notification.classList.add(options.className);
+   notification.style.cssText = 'position: absolute; color: red; background-color: yellow;';
+   notification.style.right = options.right + 'px';
+   notification.style.top = options.top + 'px';
+   notification.textContent = options.html;
+   body.prepend(notification);
+   return notification;
+}
+const hiddenElem = showNotification(options);
+setTimeout(() => { hiddenElem.remove() }, 1500)
+
+>>>>>>> 0a71f2062c52246043e2f3a2ff18e1d3a1f25911
