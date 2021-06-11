@@ -1,0 +1,45 @@
+/* Мои стили */
+/* html,
+body {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+}
+* {
+   box-sizing: border-box;
+}
+h3 {
+   margin: 0;
+}
+.wrapper {
+   min-height: 100%;
+}
+.accordion__body {
+   width: 500px;
+   margin: 50px auto auto;
+}
+.accordion__item:not(:last-child) {
+   border-bottom: 1px solid rgb(152, 209, 152);
+}
+.accordion__item {
+   padding: 20px;
+   position: relative;
+   background-color: rgb(206, 218, 206);
+}
+.accordion__title {
+   margin-bottom: 10px;
+   display: inline-block;
+   cursor: pointer;
+}
+.accordion__content {
+   font-size: 17px;
+   line-height: 140%;
+}
+.accordion__btn-close {
+   cursor: pointer;
+   position: absolute;
+   right: 10px;
+   top: 10px;
+   color: red;
+   font-weight: bold;
+} */
