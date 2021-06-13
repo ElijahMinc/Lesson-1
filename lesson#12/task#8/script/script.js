@@ -1,64 +1,52 @@
-
 const popapBtn = document.querySelector('#popap');
-
-
-popapBtn.addEventListener('click', () => showPrompt('hello', valid));
+popapBtn.addEventListener('click', (e) => showPrompt(e, 'hello', valid));
 
 // total
 function totalMessage(value) {
    document.onkeydown = null;
    document.querySelector('#modal').classList.remove('_open');
    alert(`Введено: ${value}`);
+   return;
 }
 // validate
 function valid(value) {
-   if (value == "") {
+   if (value === "" || value === null) {
       totalMessage(null);
    } else {
       totalMessage(value);
    }
 }
 // prompt
-function showPrompt(html, callback) {
+function showPrompt(e, html, callback) {
+   e.preventDefault();
+   const target = e.target.getAttribute('href').slice(1);
 
-   function displayModal(html) {
-      const modalContent = `
-      <form class="modal__body">
-         <h2 class="modal__title">${html}</h2>
-         <div class="modal__item">
-            <input type="text" name="text" class="modal__input" id="modalInput">
-         </div>
-         <div class="modal-utils modal__item d-flex">
-            <div class="modal-utils__item">
-               <button class="modal-utils__btn" type="submit" id="modalSubmit">Подтвердить</button>
-            </div>
-            <div class="modal-utils__item">
-               <button class="modal-utils__btn" type="text" id="modalClose">Отмена</button>
-            </div>
-         </div>
-      </form>
-      `;
-      const modalPage = document.querySelector('#modal');
-      modalPage.classList.add('_open');
-      modalPage.innerHTML = modalContent;
+   function showModal(modal, html) {
+      const modalPage = document.getElementById(target);
+      const modalTitle = modalPage.querySelector('.modal__title');
+      const input = modalPage.querySelector('input');
+      modal.classList.add('_open');
+      modalTitle.textContent = html;
+      input.focus();
    }
-   //Display Modal
-   displayModal(html);
-
+   const formInput = document.querySelector('form');
+   formInput.onsubmit = (e) => {
+      e.preventDefault();
+      const input = formInput.elements[0];
+      if (input.value == "" || input.value === null) {
+         return false;
+      } else {
+         callback(input.value);
+      }
+   };
+   const btnCancel = document.querySelector('#modalClose');
+   btnCancel.onclick = () => callback(null);
    //Event Keyboard
    document.onkeydown = function (e) {
       if (e.key == 'Escape') {
          totalMessage(null);
       };
    };
-   //Btns
-   const formInput = document.querySelector('form');
-   formInput.addEventListener('submit', () => {
-      const input = formInput.elements[0];
-      if (input.value == "") return false;
-      callback(input.value);
-      return false;
-   });
-   const btnCancel = document.querySelector('#modalClose');
-   btnCancel.addEventListener('click', () => callback(null));
+
+   showModal(modal, html)
 };

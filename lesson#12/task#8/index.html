@@ -10,9 +10,24 @@
 </head>
 
 <body>
-   <div class="modal d-flex" id="modal"></div>
+   <div class="modal d-flex" id="modal">
+      <form class="modal__body">
+         <h2 class="modal__title">${html}</h2>
+         <div class="modal__item">
+            <input type="text" name="text" class="modal__input" id="modalInput" tabindex='1'>
+         </div>
+         <div class="modal-utils modal__item d-flex">
+            <div class="modal-utils__item">
+               <button class="modal-utils__btn" type="submit" id="modalSubmit">Подтвердить</button>
+            </div>
+            <div class="modal-utils__item">
+               <button class="modal-utils__btn" type="button" id="modalClose">Отмена</button>
+            </div>
+         </div>
+      </form>
+   </div>
    <h1>Кликни на кнопку ниже, чтобы открыть модальное окно</h1>
-   <a href="#modal" id="popap">Открыть модальное окно</a>
+   <a href="#modal" class="btn" id="popap">Открыть модальное окно</a>
    <script src="script/script.js"></script>
 </body>
 
