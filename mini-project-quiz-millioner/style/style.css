@@ -45,6 +45,16 @@ img {
    display: block;
    object-fit: contain;
 }
+.btn-back__item {
+   text-decoration: none;
+   display: inline-block;
+   position: fixed;
+   top: 10px;
+   left: 200px;
+   padding: 10px 20px;
+   background-color: cornflowerblue;
+   border-radius: 25px;
+}
 .d-grid {
    display: grid;
 }
@@ -53,7 +63,6 @@ img {
 }
 .wrapper {
    min-height: 100%;
-   /* overflow: hidden; */
 }
 
 .header {
@@ -95,6 +104,7 @@ img {
    height: 100%;
 }
 .page__btn button {
+   color: white;
    cursor: pointer;
    outline: none;
    font-size: 40px;
@@ -205,8 +215,31 @@ img {
 }
 .nav-list__item.active {
    color: var(--first-color-white);
+   animation: scale 3s ease-in-out;
+   -webkit-animation: scale 3s ease-in-out;
 }
 @keyframes scale {
+   0% {
+      transform: translate(0, 0px) scale(1);
+      -webkit-transform: translate(0, 0px) scale(1);
+      -moz-transform: translate(0, 0px) scale(1);
+      -ms-transform: translate(0, 0px) scale(1);
+      -o-transform: translate(0, 0px) scale(1);
+   }
+   50% {
+      transform: translate(50px, 0px) scale(1.5);
+      -webkit-transform: translate(50px, 0px) scale(1.5);
+      -moz-transform: translate(50px, 0px) scale(1.5);
+      -ms-transform: translate(50px, 0px) scale(1.5);
+      -o-transform: translate(50px, 0px) scale(1.5);
+   }
+   100% {
+      transform: translate(0, 0px) scale(1);
+      -webkit-transform: translate(0, 0px) scale(1);
+      -moz-transform: translate(0, 0px) scale(1);
+      -ms-transform: translate(0, 0px) scale(1);
+      -o-transform: translate(0, 0px) scale(1);
+   }
 }
 .aside__login {
    color: white;
@@ -251,7 +284,6 @@ img {
    width: 100%;
    min-height: 70px;
    cursor: pointer;
-   border: 1px solid rgb(65, 21, 21);
    padding: 10px 15px;
    -webkit-border-radius: 10px;
    -moz-border-radius: 10px;
@@ -266,18 +298,19 @@ img {
    -moz-transition: 0.3s;
    -ms-transition: 0.3s;
    -o-transition: 0.3s;
+   box-shadow: -2px 1px 20px 1px rgb(96 103 175);
 }
 .quiz-quastions__item:hover {
    background-color: rgb(63, 112, 139);
    color: white;
-   box-shadow: -3px 7px 20px 1px rgb(70 149 194);
+   /* box-shadow: -3px 7px 20px 1px rgb(70 149 194); */
 }
 .quiz-quastions__item.checked {
    border: 1px solid rgb(194, 70, 70);
    transform: scale(1.1);
    background-color: rgb(70, 149, 194);
    color: white;
-   box-shadow: -3px 7px 20px 1px rgb(70 149 194);
+   /* box-shadow: -3px 7px 20px 1px rgb(70 149 194); */
    -webkit-transform: scale(1.1);
    -moz-transform: scale(1.1);
    -ms-transform: scale(1.1);
@@ -302,7 +335,7 @@ img {
    color: white;
    font-weight: bold;
    border: none;
-   box-shadow: 1px -1px 20px 3px black;
+   /* box-shadow: 1px -1px 20px 3px black; */
    transition: 0.3s;
    -webkit-transition: 0.3s;
    -moz-transition: 0.3s;
@@ -341,8 +374,8 @@ img {
    position: relative;
    background-color: white;
    padding: 25px;
-   min-width: 500px;
-   min-height: 200px;
+   min-width: 600px;
+   min-height: 300px;
    border-radius: 25px;
    -webkit-border-radius: 25px;
    -moz-border-radius: 25px;
@@ -361,17 +394,19 @@ img {
    font-size: 20px;
 }
 .popap__title {
+   color: red;
+
    text-align: center;
    margin-bottom: 40px;
    font-size: 26px;
 }
 .popap__content {
-   color: red;
+   color: black;
    font-weight: bold;
    display: flex;
    justify-content: center;
    align-items: center;
-   font-size: 18px;
+   font-size: 23px;
    margin-bottom: 20px;
 }
 .popap__btn {
@@ -406,6 +441,8 @@ img {
    position: absolute;
    top: 80px;
    right: 50px;
+   animation: move 1s ease infinite;
+   -webkit-animation: move 1s ease infinite;
 }
 .timer__body {
    background-color: var(--first-color);
@@ -445,19 +482,37 @@ img {
 .page-hints__item:after {
    content: "";
    position: absolute;
-   top: 15px;
+   top: 23px;
    left: -10px;
    width: 130%;
    height: 3px;
    background-color: red;
-   transform: rotate(60deg);
-   -webkit-transform: rotate(60deg);
-   -moz-transform: rotate(60deg);
-   -ms-transform: rotate(60deg);
-   -o-transform: rotate(60deg);
+   transform: rotate(40deg);
+   -webkit-transform: rotate(40deg);
+   -moz-transform: rotate(40deg);
+   -ms-transform: rotate(40deg);
+   -o-transform: rotate(40deg);
    visibility: hidden;
+   opacity: 0.7;
 }
-.page-hints__item.disabled:after {
+.page-hints__item:before {
+   content: "";
+   position: absolute;
+   top: 23px;
+   right: -10px;
+   width: 130%;
+   height: 3px;
+   background-color: red;
+   transform: rotate(140deg);
+   -webkit-transform: rotate(140deg);
+   -moz-transform: rotate(140deg);
+   -ms-transform: rotate(140deg);
+   -o-transform: rotate(140deg);
+   visibility: hidden;
+   opacity: 0.7;
+}
+.page-hints__item.disabled:after,
+.page-hints__item.disabled:before {
    visibility: visible;
 }
 .page-hints__item:nth-child(1) {
@@ -483,12 +538,77 @@ img {
 }
 .btn-pick-up__body {
 }
+.btn-pick-up__body:hover {
+   animation: 0.1s tremor ease-out;
+   -webkit-animation: 0.1s tremor ease-out;
+}
+@keyframes move {
+   0% {
+      transform: scale(1);
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+   }
+   50% {
+      transform: scale(1.2);
+      -webkit-transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      -o-transform: scale(1.2);
+   }
+   0% {
+      transform: scale(1);
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+   }
+}
+@keyframes tremor {
+   0%,
+   25% {
+      left: -2px;
+      transform: translateX(-4%) rotate(7deg);
+      -webkit-transform: translateX(-4%) rotate(7deg);
+      -moz-transform: translateX(-4%) rotate(7deg);
+      -ms-transform: translateX(-4%) rotate(7deg);
+      -o-transform: translateX(-4%) rotate(7deg);
+   }
+   26%,
+   49% {
+      left: 2px;
+      transform: translateX(-4%) rotate(-7deg);
+      -webkit-transform: translateX(-4%) rotate(-7deg);
+      -moz-transform: translateX(-4%) rotate(-7deg);
+      -ms-transform: translateX(-4%) rotate(-7deg);
+      -o-transform: translateX(-4%) rotate(-7deg);
+   }
+   50%,
+   75% {
+      left: -2px;
+      transform: translateX(-4%) rotate(-7deg);
+      -webkit-transform: translateX(-4%) rotate(-7deg);
+      -moz-transform: translateX(-4%) rotate(-7deg);
+      -ms-transform: translateX(-4%) rotate(-7deg);
+      -o-transform: translateX(-4%) rotate(-7deg);
+   }
+   76%,
+   100% {
+      left: 2px;
+      transform: translateX(-4%) rotate(7deg);
+      -webkit-transform: translateX(-4%) rotate(7deg);
+      -moz-transform: translateX(-4%) rotate(7deg);
+      -ms-transform: translateX(-4%) rotate(7deg);
+      -o-transform: translateX(-4%) rotate(7deg);
+   }
+}
 .pick-up {
    min-width: 100px;
    min-height: 80px;
    cursor: pointer;
    padding: 10px;
-   background-color: seagreen;
+   background-color: var(--first-color);
    border: none;
    border-radius: 20px;
    -webkit-border-radius: 20px;
@@ -496,8 +616,15 @@ img {
    -ms-border-radius: 20px;
    -o-border-radius: 20px;
    font-size: 20px;
+   color: white;
 }
 .answer-bold {
+   transform: scale(1.3);
    font-weight: bold;
-   margin-left: 10px;
+   margin-left: 20px;
+   color: rgb(223, 4, 4);
+   -webkit-transform: scale(1.3);
+   -moz-transform: scale(1.3);
+   -ms-transform: scale(1.3);
+   -o-transform: scale(1.3);
 }

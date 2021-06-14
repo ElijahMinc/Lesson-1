@@ -8,7 +8,6 @@ class Hints {
    }
    fiftyFifty(prompt) {
       const answers = document.querySelectorAll('.quiz-quastions__item');
-      prompt.classList.add('disabled');
       let answersSome = this.questions.find(question => question.id == quastionsCard.current);
       const trueAnswer = answersSome.answer;
       const falseAnswers = answersSome.someAnswer.filter(answer => answer !== trueAnswer);

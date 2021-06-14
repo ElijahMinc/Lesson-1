@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Mini-projects</title>
+   <style>
+      html,
+      body {
+         height: 100%;
+         margin: 0;
+         padding: 0;
+         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
+
+      .btn-back__item {
+         display: inline-block;
+         position: fixed;
+         top: 10px;
+         left: 10px;
+         padding: 10px 20px;
+         background-color: cornflowerblue;
+         border-radius: 25px;
+      }
+
+      a {
+         text-decoration: none;
+      }
+
+      .projects__link {
+         color: black;
+         font-size: 20px;
+         font-weight: bold;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         width: 100%;
+         height: 100%;
+         transform: translate(-50%, -50%);
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+
+      .wrapper {
+         min-height: 100%;
+      }
+
+      .projects {
+         height: 100vh;
+         display: flex;
+         flex-direction: column;
+      }
+
+      .projects__item {
+         flex: 1 1 33.333%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         position: relative;
+      }
+
+      .projects__item:nth-child(1) {
+         background-color: #99FFCC;
+      }
+
+      .projects__item:nth-child(2) {
+         background-color: #66CC99;
+      }
+
+      .projects__item:nth-child(3) {
+         background-color: #66FF99;
+      }
+
+      .btn-back__item {}
+   </style>
+</head>
+
+<body>
+   <div class="wrapper">
+      <div class="projects">
+         <div class="projects__item">
+            <a class="projects__link" href="mini-project-calculate/index.html">Calculator</a>
+         </div>
+         <div class="projects__item">
+            <a class="projects__link" href="mini-project-quiz-millioner/index.html">Millioner</a>
+         </div>
+         <div class="projects__item">
+            <a class="projects__link" href="mini-project-randomizer/index.html">Randomizer</a>
+         </div>
+      </div>
+   </div>
+</body>
+
+</html>

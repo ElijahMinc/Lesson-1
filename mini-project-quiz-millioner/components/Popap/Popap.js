@@ -27,7 +27,7 @@ class Popap {
       }, 3000);
    }
    attention() {
-      let statusTitlePopap = `Attention`;
+      let statusTitlePopap = `Внимание`;
       let infoText = `имеете одну попытку! Будьте внимательны!`;
       let html = `
          <div class="popap__body">
@@ -57,7 +57,7 @@ class Popap {
       }
    }
    total(dollars, endGame) {
-      let statusTitlePopap = `Attention`;
+      let statusTitlePopap = `Внимание`;
       let statusBtn = `Okey`;
       let infoText = ``;
       if (quastionsCard.current == this.questions.length
@@ -69,20 +69,20 @@ class Popap {
             this.startGameAgain();
          }
          statusBtn = `Забрать приз и начать сначала?`;
-         infoText = `Выиграли ${quastionsCard.innerText}`;
+         infoText = `выиграли <strong class="answer-bold">${quastionsCard.innerText}</strong>`;
       } else if (quastionsCard.attempt === 0) {
          infoText = `имеете одну попытку! Будьте внимательны!`;
       }
       if (quastionsCard.attempt < 0) {
          if (quastionsCard.rewardCurrent <= 9 && quastionsCard.rewardCurrent >= 6) {
             statusBtn = `Начать заново`;
-            infoText = `Выиграли ${quastionsCard.dollars}`;
-         } else if (quastionsCard.rewardCurrent <= 5 && quastionsCard.rewardCurrent >= 0) {
+            infoText = `выиграли <strong class="answer-bold">${quastionsCard.dollars}</strong>`;
+         } else if (quastionsCard.rewardCurrent <= 5 && quastionsCard.rewardCurrent >= 0) { // ноль
             statusBtn = `Начать заново`;
-            infoText = `Выиграли ${quastionsCard.dollars}`
+            infoText = `выиграли <strong class="answer-bold">${quastionsCard.dollars}</strong>`
          } else {
             statusBtn = `Начать заново`;
-            infoText = `Проиграли ${quastionsCard.dollars}`;
+            infoText = `проиграли <strong class="answer-bold">${quastionsCard.dollars}</strong>`;
          }
       }
       let html = `
@@ -94,24 +94,24 @@ class Popap {
             <button class="popap__btn">
                ${statusBtn}
             </button>
-            <div class="popap__close">
-               <i class="fas fa-times"></i>
-            </div>
+
          </div>
       `;
+      // <div class="popap__close">
+      //    <i class="fas fa-times"></i>
+      // </div>
       this.popap.classList.add('_show');
       this.popap.innerHTML = html;
-      this.setup(); // TOTAL НАчать СНАЧАЛА
+      this.setup();
    }
-   handleCloseBtn() {
-      this.popap.innerHTML = ``;
-      this.popap.classList.remove('_show');
-      pageBody.innerHTML = `
-      <div class="not-today">
-         <p> Штош, знач не седня <p>
-      </div>
-      `
-   }
+   // handleCloseBtn() {
+   //    this.popap.classList.remove('_show');
+   //    pageBody.innerHTML = `
+   //    <div class="not-today">
+   //       <img src="img/cat.jpg" />
+   //    </div>
+   //    `
+   // }
    timerRefresh() { //ОБНОВЛЕНИЕ ТАЙМЕРА ПО ОКОНЧАНИЮ ВРЕМЕНИ
       let timer = setInterval(() => {
          let nowTime = this.timer.render();
@@ -135,7 +135,7 @@ class Popap {
                   if (quastionsCard.rewardCurrent <= 9 && quastionsCard.rewardCurrent >= 6) {
                      quastionsCard.dollars = quastionsCard.reward[10].innerText;
                   }
-                  if (quastionsCard.rewardCurrent <= 5 && quastionsCard.rewardCurrent >= 0) {
+                  if (quastionsCard.rewardCurrent <= 5 && quastionsCard.rewardCurrent >= 0) { // был 0
                      quastionsCard.dollars = quastionsCard.reward[5].innerText;
                   }
                   popap.timerTick = false;
@@ -162,7 +162,6 @@ class Popap {
    handleStartBtn() {
       if (quastionsCard.current == this.questions.length || quastionsCard.attempt < 0) {
          // НАЧАТЬ ЗАНОВО!
-
          this.startGameAgain();
       }
       quastionsCard.reward.forEach(e => e.classList.remove('active'));
@@ -173,26 +172,27 @@ class Popap {
       quastionsCard.render();
    }
    setup() {
-      const closeBtn = document.querySelector('.popap__close');
+      // const closeBtn = document.querySelector('.popap__close');
       const startGame = document.querySelector('.popap__btn');
-      closeBtn.addEventListener('click', () => this.handleCloseBtn());
+      // closeBtn.addEventListener('click', () => this.handleCloseBtn());
       startGame.addEventListener('click', () => this.handleStartBtn());
    }
    render() {
       let html = `
          <div class="popap__body">
-            <h2 class="popap__title">Attention!</h2>
+            <h2 class="popap__title">Внимание!</h2>
             <div class="popap__content">
-               На каждый вопрос даётся 1 минута! Поехали?
+               На каждый вопрос даётся 1 минута! Начинаем?
             </div>
             <button class="popap__btn">
-               Давай начинать уже!
+               Начать игру
             </button>
-            <div class="popap__close">
-               <i class="fas fa-times"></i>
-            </div>
+
          </div>
       `;
+      // <div class="popap__close">
+      //    <i class="fas fa-times"></i>
+      // </div>
       this.popap.classList.add('_show');
       this.popap.innerHTML = html;
       this.setup();

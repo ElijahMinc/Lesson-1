@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="styles/styles.css">
+   <title>Randomizer</title>
+</head>
+
+<body>
+   <div class="wrapper">
+      <h1 class="title">
+         Randomizer
+      </h1>
+      <div class="container d-flex">
+
+         <div class="randomizer">
+
+            <div class="randomizer__body">
+               <div class="randomizer__item">
+                  <label for="quantity" class="randomizer__label">Quantity:</label>
+                  <input type="number" value="5" class="randomizer__input" id="quantity">
+               </div>
+               <div class="randomizer__item">
+                  <label for="minRange" class="randomizer__label">Min: </label>
+                  <input type="number" value="10" class="randomizer__input" id="minRange">
+               </div>
+               <div class="randomizer__item">
+                  <label for="maxRange" class="randomizer__label">Max: </label>
+                  <input type="number" value="30" class="randomizer__input" id="maxRange">
+               </div>
+               <div class="randomizer__item">
+                  <button class="randomizer__btn" id="btn">Generate</button>
+               </div>
+               <div class="randomizer__item">
+                  <label for="total" class="randomizer__label">Result: </label>
+                  <ul class="total d-grid" id="total">
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <a class="btn-back__item" href="../index.html">Back</a>
+   <script src="script/script.js"></script>
+</body>
+
+</html>

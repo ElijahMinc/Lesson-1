@@ -1,0 +1,122 @@
+:root {
+   /* colors */
+   --color-bg: #ffebcd;
+   --color-rand-bg: #f5fffa;
+   --color-rand-text: rgb(0, 0, 0);
+   --color-rand-total: rgb(221, 183, 133);
+   --color-rand-btn: rgb(189, 143, 143);
+   /* indents */
+   --inside-rand-indent: 20px;
+   --inside-rand-text-indent: 10px;
+   --outside-rand-text-indent: 20px;
+   /* font-sizes */
+   --size-main-rand: 25px;
+   --size-btns: 20px;
+}
+html,
+body {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   background-color: var(--color-bg);
+}
+* {
+   box-sizing: border-box;
+}
+.btn-back__item {
+   color: black;
+   text-decoration: none;
+   display: inline-block;
+   position: fixed;
+   top: 10px;
+   left: 10px;
+   padding: 10px 20px;
+   background-color: cornflowerblue;
+   border-radius: 25px;
+}
+ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+.wrapper {
+   min-height: 100%;
+}
+.container {
+   max-width: 500px;
+   margin: 0 auto;
+   min-height: 100vh;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+.d-flex {
+   display: flex;
+}
+.d-grid {
+   display: grid;
+}
+.randomizer {
+   width: 100%;
+   background-color: var(--color-rand-bg);
+}
+.title {
+   text-align: center;
+   font-size: 40px;
+}
+.randomizer__body {
+   padding: var(--inside-rand-indent);
+}
+.randomizer__item {
+   margin-bottom: var(--outside-rand-text-indent);
+}
+.randomizer__label {
+   cursor: pointer;
+   display: block;
+   font-weight: 700;
+   font-size: 18px;
+   margin-bottom: 10px;
+}
+.randomizer__input {
+   width: 70px;
+   padding: 5px;
+   border: none;
+   outline: none;
+   cursor: pointer;
+}
+.randomizer__input:focus,
+.randomizer__btn:focus {
+   box-shadow: -3px 4px 9px rgba(0, 0, 0, 0.8);
+}
+.randomizer__btn {
+   padding: 10px 20px;
+   cursor: pointer;
+   background-color: var(--color-rand-btn);
+   border: none;
+   background-color: none;
+   outline: none;
+   border-radius: 5px;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   -ms-border-radius: 5px;
+   -o-border-radius: 5px;
+}
+.total {
+   grid-template-columns: repeat(auto-fit, minmax(50px, 50px));
+   grid-auto-rows: 50px;
+   gap: 10px;
+}
+.total__item {
+   min-width: 40px;
+   min-height: 40px;
+   background-color: var(--color-rand-total);
+   border-radius: 50%;
+   -webkit-border-radius: 50%;
+   -moz-border-radius: 50%;
+   -ms-border-radius: 50%;
+   -o-border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
