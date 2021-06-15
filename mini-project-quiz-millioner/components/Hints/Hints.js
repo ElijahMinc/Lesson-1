@@ -5,26 +5,40 @@ class Hints {
    constructor(questions, hintsPage) {
       this.hintsPage = document.querySelector(hintsPage);
       this.questions = questions.questions;
+      this.hintCheckFifty = false;
+      this.falseAnswer = null;
+      this.trueAnswer = null;
    }
-   fiftyFifty(prompt) {
+   fiftyFifty() {
       const answers = document.querySelectorAll('.quiz-quastions__item');
       let answersSome = this.questions.find(question => question.id == quastionsCard.current);
       const trueAnswer = answersSome.answer;
       const falseAnswers = answersSome.someAnswer.filter(answer => answer !== trueAnswer);
-      const random = falseAnswers[Math.floor(Math.random() * falseAnswers.length)];
+      const falseRandomAnswer = falseAnswers[Math.floor(Math.random() * falseAnswers.length)];
       for (let index = 0; index < answers.length; index++) {
          const answer = answers[index];
-         if (answer.innerText === random || answer.innerText === trueAnswer) {
+         console.log(falseRandomAnswer, trueAnswer)
+         if (answer.innerText === falseRandomAnswer || answer.innerText === trueAnswer) {
             continue;
          }
-         answer.remove();
+         if (this.hintCheckFifty === false) {
+            this.falseAnswer = falseRandomAnswer;
+            this.trueAnswer = trueAnswer;
+            answer.remove();
+         }
       }
+      this.hintCheckFifty = true;
    }
    phone() {
-      const answers = document.querySelectorAll('.quiz-quastions__item');
-      let answersSome = this.questions.find(question => question.id == quastionsCard.current).someAnswer;
-      const answersRandom = answersSome[Math.floor(Math.random() * answersSome.length)];
-      popap.usePhone(answersRandom);
+      if (this.hintCheckFifty) {
+         const answers = [this.falseAnswer, this.trueAnswer];
+         const randomAnswers = answers[Math.floor(Math.random() * answers.length)];
+         popap.usePhone(randomAnswers);
+      } else {
+         const answersSome = this.questions.find(question => question.id == quastionsCard.current).someAnswer;
+         const answersRandom = answersSome[Math.floor(Math.random() * answersSome.length)];
+         popap.usePhone(answersRandom);
+      }
    }
    chooseHint(event) {
       const prompt = event.currentTarget;
